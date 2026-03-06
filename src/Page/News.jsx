@@ -1,7 +1,19 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Wrapper from '../component/Wrapper'
+import axios from 'axios'
+import api from '../config/axios'
 
 const News = ({className}) => {
+
+  const [news,setNews]=([]);
+
+    const fetchNews=async()=>{
+      const response=await api.get(`{/everything?q=kohli&apiKey=${import.meta.env.VITE_API_KEY}}`)
+      console.log(response.data)
+    
+    }
+useEffect(()=>{fetchNews()},[])
+
   return (
     <Wrapper>
         <div className={`grid grid-cols-4 gap-6 ${className}`}>

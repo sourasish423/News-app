@@ -2,8 +2,8 @@ import React from 'react'
 import Wrapper from './Wrapper'
 
 const Category = ({className}) => {
-   const categories=['business','entertainment',
-    'general','health','science','sports']
+   const categories=['Business','Entertainment',
+    'General','Health','Science','Sports']
 
     return (
 <div className={`${className}`}>
