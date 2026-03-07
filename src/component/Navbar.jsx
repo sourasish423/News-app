@@ -1,7 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Wrapper from './Wrapper'
+import { useNewsContext } from '../context/NewsContext';
 
 const Navbar = ({className}) => {
+
+  const[searchValue,setSearchvalue]=useState('');
+  const[setNews,fetchNews]=useNewsContext();
+
+  const searchNews=async(e)=>{
+    const searchValue=e.target.value;//e is the event target is the button and value is value of the button
+        if(!searchValue) return;
+    const data= await fetchNews(`/everything?q= ${searchValue}`)
+        setNews(data.articles);
+  }
+
+
   return (
     <div className={`bg-base-200 ${className}`}>
     <Wrapper>
@@ -12,7 +25,8 @@ const Navbar = ({className}) => {
   </div>
   
   <div className="flex gap-2">
-    <input type="text" placeholder="Search" 
+    <input onChange={searchNews}
+    type="text" placeholder="Search" 
     className="input input-bordered w-24 md:w-auto" />
   </div>
 
