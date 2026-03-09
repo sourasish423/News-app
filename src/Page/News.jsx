@@ -2,10 +2,12 @@ import React, { useEffect } from 'react'
 import Wrapper from '../component/Wrapper'
 import axios from 'axios'
 import { useNewsContext } from '../context/NewsContext'
+import Loader from '../component/Loader'
+
 
 const News = ({className}) => {
 
-    const {news,setNews,fetchNews}=useNewsContext();
+    const {news,setNews,fetchNews,loading}=useNewsContext();
 
     //console.log(news)//first its empty array after calling the api it changes to data.articles
     
@@ -18,6 +20,8 @@ const News = ({className}) => {
             )()//immediately invoked function
              
       },[])
+
+      if(loading) return <Loader className={"w-fit m-auto py-24 mb-32"}/>
 
       return (
           <Wrapper>
