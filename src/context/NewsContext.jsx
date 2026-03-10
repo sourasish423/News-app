@@ -19,7 +19,7 @@ const NewsContextProvider=({children})=>{//this value can be used in any compone
 
         setLoading(true);
        try{
-        const response=await api.get("/news");
+        const response=await api.get(`/news ${url}`);
         setLoading(false);
       return response.data;
        } 
