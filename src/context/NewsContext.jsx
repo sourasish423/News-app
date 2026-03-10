@@ -19,13 +19,14 @@ const NewsContextProvider=({children})=>{//this value can be used in any compone
 
         setLoading(true);
        try{
-        const response=await api.get(`${url}&apiKey=${import.meta.env.VITE_API_KEY}`)
+        const response=await api.get("/news");
         setLoading(false);
       return response.data;
        } 
        catch(error){
                 console.log(error)
                 setLoading(false);
+                return { articles: [] };
        }
     }
 

@@ -8,7 +8,7 @@ const Loader = ({className}) => {
     className="absolute inset-0 rounded-xl bg-blue-500/20 blur-xl animate-pulse"
   ></div>
 
-  <div cclassName="w-full h-full relative flex items-center justify-center">
+  <div className="w-full h-full relative flex items-center justify-center">
     <div
       className="absolute inset-0 rounded-xl bg-linear-to-r from-cyan-500 via-blue-500 to-purple-500 animate-spin blur-sm"
     ></div>
@@ -32,7 +32,7 @@ const Loader = ({className}) => {
       </div>
 
       <div
-        class="absolute inset-0 bg-linear-to-t from-transparent via-blue-500/10 to-transparent animate-pulse"
+        className="absolute inset-0 bg-linear-to-t from-transparent via-blue-500/10 to-transparent animate-pulse"
       ></div>
     </div>
   </div>
