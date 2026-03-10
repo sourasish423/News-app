@@ -15,7 +15,7 @@ const NewsContextProvider=({children})=>{//this value can be used in any compone
 //as we have to fetch api mulitple times in different compn so we are fetching here 
 
 
-    const fetchNews=async(url="/everything?q=india")=>{
+    const fetchNews=async(url="?category=india")=>{
 
         setLoading(true);
        try{
