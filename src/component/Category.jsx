@@ -12,7 +12,7 @@ const Category = ({className}) => {
 
     const handleClick=async(e)=>{
         const cat=e.target.value;//e is the event target is the button and value is value of the button
-        const data= await fetchNews(`/everything?q= ${cat}`)
+        const data= await fetchNews(`?category=${cat}`)
              setNews(data.articles);
         
     }
