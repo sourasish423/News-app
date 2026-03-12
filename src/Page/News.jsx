@@ -20,10 +20,11 @@ const News = ({className}) => {
              setNews(data?.articles || [])}
             )()//immediately invoked function
 
-            const uniqueNews=news.filter((article,index,self)=>
+      },[])
+
+      const uniqueNews=news.filter((article,index,self)=>
               index===self.findIndex((a)=>a.url===article.url));
              
-      },[])
 
       if(loading) return <Loader className={"w-fit m-auto py-24 mb-32"}/>
 
