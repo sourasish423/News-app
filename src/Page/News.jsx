@@ -12,14 +12,16 @@ const News = ({className}) => {
     //console.log(news)//first its empty array after calling the api it changes to data.articles
     
 
-    const uniqueNews=news.filter((article,index,self)=>
-    index===self.findIndex((a)=>a.url===article.url));
+    
 
       useEffect(()=>{
 
             (async ()=>{const data= await fetchNews()
              setNews(data?.articles || [])}
             )()//immediately invoked function
+
+            const uniqueNews=news.filter((article,index,self)=>
+              index===self.findIndex((a)=>a.url===article.url));
              
       },[])
 
