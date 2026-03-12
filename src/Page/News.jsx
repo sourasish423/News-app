@@ -23,7 +23,7 @@ const News = ({className}) => {
       },[])
 
       const uniqueNews=news.filter((article,index,self)=>
-              index===self.findIndex((a)=>a.url===article.url));
+              index===self.findIndex((a)=>a.title===article.title));
              
 
       if(loading) return <Loader className={"w-fit m-auto py-24 mb-32"}/>
