@@ -12,6 +12,8 @@ const News = ({className}) => {
     //console.log(news)//first its empty array after calling the api it changes to data.articles
     
 
+    const uniqueNews=news.filter((article,index,self)=>
+    index===self.findIndex((a)=>a.url===article.url));
 
       useEffect(()=>{
 
@@ -26,11 +28,11 @@ const News = ({className}) => {
       return (
           <Wrapper>
               <div className={`grid grid-cols-4 gap-6 ${className}`}>
-                {news.map((newsDetails,index)=>{
+                {uniqueNews.map((newsDetails,index)=>{
                   if(!newsDetails.urlToImage)
                     return null;
                       return(
-                         <NewsCard key={index}
+                         <NewsCard key={newsDetails.url}
                          details={newsDetails}/>
                       )
                 })}
