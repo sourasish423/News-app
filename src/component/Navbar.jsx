@@ -14,7 +14,7 @@ const Navbar = ({className}) => {
         clearTimeout(timer);
 
         timer=setTimeout(async() => {
-          const data= await fetchNews(`/everything?q= ${searchValue}`)
+          const data= await fetchNews(`?q= ${searchValue}`)
         setNews(data.articles);
         }, 1000);
     
